@@ -1,0 +1,66 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2, h3 {
+    margin: 10px 0;
+  }
+  
+  .notepad {
+    width: 100%;
+    height: 70vh; /* Takes up 70% of the viewport height */
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .save-button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .save-button:hover {
+    background-color: #0056b3;
+  }
+  
+ 
+  .notes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .notes-list {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    max-height: 200px; /* Adjust the max height if you want a fixed limit */
+    overflow-y: auto;  /* Scrollable if notes exceed the max height */
+  }
+  
+  .notes-list li {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  
