@@ -1,66 +1,87 @@
+/* Full-page layout with no boundaries around the notepad */
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  h2, h3 {
-    margin: 10px 0;
-  }
-  
-  .notepad {
-    width: 100%;
-    height: 70vh; /* Takes up 70% of the viewport height */
-    padding: 10px;
-    font-size: 16px;
-    box-sizing: border-box;
-    resize: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-  }
-  
-  .save-button {
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .save-button:hover {
-    background-color: #0056b3;
-  }
-  
- 
-  .notes-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .notes-list {
-    list-style-type: none;
-    width: 100%;
-    padding: 0;
-    max-height: 200px; /* Adjust the max height if you want a fixed limit */
-    overflow-y: auto;  /* Scrollable if notes exceed the max height */
-  }
-  
-  .notes-list li {
-    margin: 5px 0;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.email-input {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.save-button, .clear-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #0056b3;
+}
+
+.clear-button {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.clear-button:hover {
+  background-color: #e60000;
+}
+
+/* Notepad container with line numbers */
+.notepad-wrapper {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.line-numbers {
+  background-color: #f4f4f4;
+  color: #666;
+  padding: 10px;
+  text-align: right;
+  border-right: 1px solid #ccc;
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  user-select: none;
+}
+
+.notepad {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  resize: none;
+  height: calc(100vh - 60px); /* Full height minus the top bar height */
+  box-sizing: border-box;
+}
